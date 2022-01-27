@@ -25,15 +25,11 @@
         }
       .btn-outline-link {
         position: relative;
-        top: 15px;
-    }
-      .btn-outline-links {
-        position: relative;
-        top: 15px;
+        top: 20px;
     }
     .navbar-collapse {
         width: auto;
-        height: 190px;
+        height: 140px;
     }
     .navbar-brand {
         font-size: 18px;
@@ -199,7 +195,7 @@
         .product-card {
           position: relative;
           top: 60px;
-          left: 0%;
+          left: 2%;
           width: 165px !important;
           height: 320px;
           margin-bottom: 25px;
@@ -222,6 +218,8 @@
         }
         .product-price {
           position: relative;
+          width: 80px;
+          left: 27px;
           font-size: 14px;
         }
       /* Akhir Product */
@@ -235,7 +233,7 @@
         .footer-title h5 {
           position: relative;
           top: 70px;
-          left: 200%;
+          left: 210%;
           font-family: var(--heading-font);
           font-size: 20px;
           font-weight: 500;
@@ -248,7 +246,7 @@
         .nav {
           position: relative;
           top: 80px;
-          left: 200% !important;
+          left: 210% !important;
           margin-bottom: 80px;
         }
         .navs-link {
@@ -262,7 +260,7 @@
           font-size: 22px;
           position: relative;
           top: 30px;
-          left: 70px;
+          left: 90px;
           font-family: var(--heading-font);
           font-weight: 500;
           color: #FCFCFC;
@@ -270,7 +268,7 @@
         .logo-pembayaran {
           position: relative;
           top: 40px;
-          left: 40px;
+          left: 50px;
           width: 200px !important;
           }
         .footer-text-1 {
