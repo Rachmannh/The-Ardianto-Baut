@@ -29,7 +29,7 @@
     }
     .navbar-collapse {
         width: auto;
-        height: 140px;
+        height: 130px;
     }
     .navbar-brand {
         font-size: 18px;
@@ -195,7 +195,7 @@
         .product-card {
           position: relative;
           top: 60px;
-          left: 2%;
+          left: 1%;
           width: 165px !important;
           height: 320px;
           margin-bottom: 25px;
