@@ -1,3 +1,13 @@
+<?php
+include './assets/function/functions.php';
+$data = barang("SELECT * FROM data_barang WHERE status = 'promo' ORDER BY id_barang DESC");
+
+function format_rupiah($total)
+{
+  $angka = "Rp." . number_format($total, 2, ',', '.');
+  return $angka;
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -10,18 +20,14 @@
   <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
   <!-- My CSS -->
   <link rel="stylesheet" href="./assets/css/main.css">
   <link rel="stylesheet" href="./assets/css/responsive.css">
 
   <!-- Animation -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
@@ -32,14 +38,9 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <!-- Font -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500&family=Hind+Madurai:wght@300;400&display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Habibi&family=Hind+Madurai:wght@300;400&display=swap"
-    rel="stylesheet">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400&family=Martel+Sans:wght@300;400;600;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500&family=Hind+Madurai:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Habibi&family=Hind+Madurai:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400&family=Martel+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <!-- Icon -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
@@ -53,8 +54,7 @@
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href=""><span class="color-change">IDO</span> BAUT</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -95,7 +95,7 @@
           <h1>Murah, berkualitas dan terpercaya</h1>
           <p>Toko Kami Menjual berbagai macam Baut Lengkap dan Berkualitas, Silahkan Memilih dan Melihat Berbagai Produk
             kami.</p>
-            <a href="" class="btn btn-primary">Shop Now</a>
+          <a href="" class="btn btn-primary">Shop Now</a>
         </div>
       </div>
       <div class="swiper-slide">
@@ -104,7 +104,7 @@
           <h1>Murah, berkualitas dan terpercaya</h1>
           <p>Toko Kami Menjual berbagai macam Baut Lengkap dan Berkualitas, Silahkan Memilih dan Melihat Berbagai Produk
             kami.</p>
-            <a href="" class="btn btn-primary">Shop Now</a>
+          <a href="" class="btn btn-primary">Shop Now</a>
         </div>
       </div>
     </div>
@@ -180,84 +180,31 @@
   <section id="products" class="product-highlight-section">
     <!-- Page Content -->
     <div class="container">
-
       <h1 class="product-heading">Produk Terbaru</h1>
-
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-4 row-cols-xxl-6">
 
-        <div class="cards col-lg-3 col-md-4 col-6">
-          <div class="product-card card">
-            <a href="">
-              <img src="./assets/img/BAUT L GALVANIS 2.jpg" class="product-card-img card-img-top" alt="...">
-            </a>
-            <div class="card-body">
+        <?php foreach ($data as $barang) : ?>
+          <div class="cards col-lg-3 col-md-4 col-6">
+            <div class="product-card card">
               <a href="">
-                <h5 class="product-titles card-title">Baut Reflektor Bagian Bawah Fizr F1ZR Poswan / Baut Reflektor
-                  Lampu Depan Fizr F1ZR Poswan</h5>
-                <p class="product-price card-text">
-                  <span class="real-price">Rp. 7.000</span>
-                  <span class="discount-price">Rp. 6.000</span>
-                </p>
+                <img src="./assets/img/BAUT L GALVANIS 2.jpg" class="product-card-img card-img-top mt-4" alt="...">
               </a>
+              <div class="card-body">
+                <span class="product-promo position-absolute top-0 start-0 bg-danger text-white">Promo</span>
+                <a href="">
+                  <h5 class="product-titles "><?= $barang['nama_barang']; ?></h5>
+                  <p class="product-price card-text">
+                    <span class="real-price"><?= format_rupiah($barang['harga_barang']); ?></span><br>
+                    <span class="discount-price"><?= format_rupiah($barang['harga_promo']); ?></span>
+                  </p>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="cards col-lg-3 col-md-4 col-6">
-          <div class="product-card card">
-            <a href="">
-              <img src="./assets/img/BAUT L GALVANIS 2.jpg" class="product-card-img card-img-top" alt="...">
-            </a>
-            <div class="card-body">
-              <a href="">
-                <h5 class="product-titles card-title">Gantungan Barang Honda C70 C700 Astrea Star Prima Grand Legenda
-                </h5>
-                <p class="product-price card-text">
-                  <span class="real-price">Rp. 6.000</span>
-                  <span class="discount-price">Rp. 5.000</span>
-                </p>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="cards col-lg-3 col-md-4 col-6">
-          <div class="product-card card">
-            <a href="">
-              <img src="./assets/img/BAUT L GALVANIS 2.jpg" class="product-card-img card-img-top" alt="...">
-            </a>
-            <div class="card-body">
-              <a href="">
-                <h5 class="product-titles card-title">Baut Dek Bordes Scoopy Karbu Scoopy Fi / Baut Bordes Atas Bawah
-                  Scoopy Karbu Scoopy Fi Fullset</h5>
-                <p class="product-price card-text">
-                  <span class="real-price">Rp. 19.000</span>
-                  <span class="discount-price">Rp. 15.000</span>
-                </p>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="cards col-lg-3 col-md-4 col-6">
-          <div class="product-card card">
-            <a href="">
-              <img src="./assets/img/BAUT L GALVANIS 2.jpg" class="product-card-img card-img-top" alt="...">
-            </a>
-            <div class="card-body">
-              <a href="">
-                <h5 class="product-titles card-title">Baut Reflektor Bagian Bawah Fizr F1ZR Poswan / Baut Reflektor
-                  Lampu Depan Fizr F1ZR Poswan</h5>
-                <p class="product-price card-text">
-                  <span class="real-price">Rp. 7.000</span>
-                  <span class="discount-price">Rp. 6.000</span>
-                </p>
-              </a>
-            </div>
-          </div>
-        </div>
+        <?php endforeach; ?>
 
       </div>
+
   </section>
   <!-- Akhir Product Highlight -->
 
@@ -310,7 +257,7 @@
         <div class="col-md-4 d-flex align-items-center">
           <span class="footer-text">Ido Baut © 2021 All rights reserved</span>
         </div>
-    
+
         <span class="footer-text-1">Developed by <a class="developer" href=""> Ragazzo Tech</a></span>
       </footer>
     </div>
@@ -319,11 +266,9 @@
 
   <!-- Option 2: Separate Popper and Bootstrap JS -->
 
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
-    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
   </script>
 
   <!-- Icon JS -->
@@ -362,26 +307,28 @@
     });
   </script>
 
-<script>
-  //Get the button
-  var mybutton = document.getElementById("myBtn");
-  
-  // When the user scrolls down 500px from the top of the document, show the button
-  window.onscroll = function() {scrollFunction()};
-  
-  function scrollFunction() {
-    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-      mybutton.style.display = "block";
-    } else {
-      mybutton.style.display = "none";
+  <script>
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 500px from the top of the document, show the button
+    window.onscroll = function() {
+      scrollFunction()
+    };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
     }
-  }
-  
-  // When the user clicks on the button, scroll to the top of the document
-  function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
   </script>
 </body>
 
