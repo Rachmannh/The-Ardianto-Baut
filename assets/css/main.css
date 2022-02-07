@@ -20,13 +20,15 @@
     --heading-font: 'Hind Madurai', sans-serif;
     --sub-heading-font: 'Martel Sans', sans-serif;
   }
+
+
+  /* Landing Page */
   
   /* Navbar */
   
   .navbar {
     position: relative;
     width: 100%;
-    z-index: 99 !important;
   }
   
   .navbar-dark {
@@ -535,3 +537,139 @@
 }
   
   /* Akhir Footer */
+
+  /* Akhir Landing Page */
+
+  /* About Page */
+
+  /* Hero */
+  
+  .hero-title {
+    position: relative;
+    top: 1.5rem;
+    text-align: center;
+    font-family: var(--heading-font);
+    font-weight: 600;
+  }
+
+  .about-ido {
+    width: 700px;
+    border-radius: 30px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  }
+
+  .about-ido:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+
+  .display-5 {
+    font-family: var(--heading-font);
+    font-weight: 600;
+    font-size: 30px;
+  }
+
+  .ido-warehouse {
+    width: 700px;
+    border-radius: 30px;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  }
+
+  .ido-warehouse:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+
+  /* Akhir Hero */
+
+  /* Akhir About Page */
+
+
+  /* Product Page */
+
+
+  /* Aside */
+
+/* Style the header */
+header {
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: rgb(0, 0, 0);
+}
+
+/* Create two columns/boxes that floats next to each other */
+navs {
+  float: left;
+  width: 20%;
+  padding: 24px;
+  text-decoration: none;
+}
+
+navs h1 {
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 24px;
+}
+
+navs ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.kategori-title {
+  font-family: var(--sub-heading-font);
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.kategori {
+  margin-bottom: 10px;
+}
+
+.kategori a {
+  color: #000000;
+  font-family: var(--sub-heading-font);
+  text-decoration: none;
+}
+
+.kategori a:hover {
+  font-weight: 600;
+}
+
+/* Akhir Aside */
+
+/* Accordion */
+
+:focus {
+  outline: 0 !important;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+  background-color: #CAC4CE !important;
+  color: #FCFCFC !important;
+  border-radius: 10px !important;
+}
+
+button.accordion-button.collapsed {
+  background-color: #CAC4CE !important;
+  border-radius: 10px !important;
+}
+
+/* Akhir Accordion */
+
+article {
+  float: left;
+  padding: 20px;
+  width: 80%;
+  height: 300px;
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+  /* Akhir Product Page */
