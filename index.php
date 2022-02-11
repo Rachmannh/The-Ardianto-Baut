@@ -4,7 +4,7 @@ $data = barang("SELECT * FROM data_barang WHERE status = 'promo' ORDER BY id_bar
 
 function format_rupiah($total)
 {
-  $angka = "Rp." . number_format($total, 2, ',', '.');
+  $angka = "Rp." . number_format($total, 0, ',', '.');
   return $angka;
 }
 ?>
@@ -49,34 +49,15 @@ function format_rupiah($total)
 </head>
 
 <body>
+  <div class="row">
+    <div class="col-12">
+      <?php
+      include 'navbar.php';
+      ?>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href=""><span class="color-change">IDO</span> BAUT</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Products</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">Contact</a>
-          </li>
-        </ul>
-      </div>
     </div>
-  </nav>
-  <!-- Akhir Navbar -->
 
+  </div>
   <!-- Hero -->
   <div class="swiper mySwiper ">
     <div class="swiper-wrapper">
@@ -179,89 +160,41 @@ function format_rupiah($total)
   <!-- Product Highlight -->
   <section id="products" class="product-highlight-section">
     <!-- Page Content -->
-    <div class="container">
-      <h1 class="product-heading">Produk Terbaru</h1>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-4 row-cols-xxl-6">
-
-        <?php foreach ($data as $barang) : ?>
-          <div class="cards col-lg-3 col-md-4 col-6">
-            <div class="product-card card">
-              <a href="">
-                <img src="./assets/img/BAUT L GALVANIS 2.jpg" class="product-card-img card-img-top mt-4" alt="...">
-              </a>
-              <div class="card-body">
-                <span class="product-promo position-absolute top-0 start-0 bg-danger text-white">Promo</span>
-                <a href="">
-                  <h5 class="product-titles "><?= $barang['nama_barang']; ?></h5>
-                  <p class="product-price card-text">
-                    <span class="real-price"><?= format_rupiah($barang['harga_barang']); ?></span><br>
-                    <span class="discount-price"><?= format_rupiah($barang['harga_promo']); ?></span>
-                  </p>
-                </a>
+    <h1 class="product-heading">Produk Terbaru</h1>
+    <div class="row row-cols-2 row-cols-sm-2 row-cols-md-4 row-cols-lg-4 row-cols-xxl-6 cards-container">
+      <?php foreach ($data as $barang) : ?>
+        <div class="card-body col-lg-5 col-md-4 col-sm-4  ">
+          <div class="card product-card">
+            <a href="">
+              <img src="./assets/function/img/<?= $barang['img']; ?>" class="product-card-img card-img-top mt-4 " alt="...">
+            </a>
+            <div class="card-body">
+              <span class="product-promo position-absolute top-0 start-0 bg-danger text-white">Promo</span>
+              <h5 class="product-titles"><?= $barang['nama_barang']; ?></h5>
+              <div class="product-price card-text">
+                <p class="real-price"><?= format_rupiah($barang['harga_barang']) ?></p>
+                <p class="discount-price"><?= format_rupiah($barang['harga_promo']) ?></p>
               </div>
             </div>
           </div>
-        <?php endforeach; ?>
+        </div>
+      <?php endforeach; ?>
 
-      </div>
+
+    </div>
 
   </section>
   <!-- Akhir Product Highlight -->
 
   <!-- Footer -->
-  <section class="footer">
-    <div class="container">
-      <footer class="py-5">
-        <div class="row">
-          <div class="footer-title col-2">
-            <h5>Link</h5>
-            <ul class="nav flex-column">
-              <li class="navs-item mb-2"><a href="" class="navs-link p-0">Home</a></li>
-              <li class="navs-item mb-2"><a href="" class="navs-link p-0">About</a></li>
-              <li class="navs-item mb-2"><a href="" class="navs-link p-0">Product</a></li>
-              <li class="navs-item mb-2"><a href="" class="navs-link p-0">Contact</a></li>
-            </ul>
-          </div>
+  <div class="row container-footer">
+    <div class="col-12">
+      <?php
+      include 'footer.php';
+      ?>
 
-          <div class="footer-title col-2">
-            <h5>Info</h5>
-            <ul class="nav flex-column">
-              <li class="navs-item mb-2"><a href="" class="navs-link p-0">Pemesanan</a></li>
-              <li class="navs-item mb-2"><a href="" class="navs-link p-0">Pengiriman</a></li>
-              <li class="navs-item mb-2"><a href="" class="navs-link p-0">FaQ</a></li>
-              <li class="navs-item mb-2"><a href="" class="navs-link p-0">Terms & Conditions</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-title col-2">
-            <h5>Contact</h5>
-            <ul class="nav flex-column">
-              <li class="navs-item mb-2"><a href="" class="navs-link p-0">Whatsapp</a></li>
-            </ul>
-          </div>
-
-          <div class="col-4 offset-1">
-            <form>
-              <h1 class="pembayaran-text">
-                Pembayaran :
-              </h1>
-              <img src="./assets/img/logo-pembayaran.png" class="logo-pembayaran" alt="">
-            </form>
-          </div>
-        </div>
-      </footer>
     </div>
-
-    <div class="container">
-      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <div class="col-md-4 d-flex align-items-center">
-          <span class="footer-text">Ido Baut © 2021 All rights reserved</span>
-        </div>
-
-        <span class="footer-text-1">Developed by <a class="developer" href=""> Ragazzo Tech</a></span>
-      </footer>
-    </div>
-  </section>
+  </div>
   <!-- Akhir Footer -->
 
   <!-- Option 2: Separate Popper and Bootstrap JS -->
