@@ -56,7 +56,6 @@ function format_rupiah($total)
       ?>
 
     </div>
-
   </div>
   <!-- Hero -->
   <div class="swiper mySwiper ">
@@ -108,7 +107,7 @@ function format_rupiah($total)
 
       <!-- Page Heading -->
       <h1 class="why-us-heading py-4">Kenapa Harus Produk Kami ?</h1>
-      <div class="row">
+      <div class="row whyUs">
         <div class="col-lg-4 col-sm-6 mb-4">
           <div class="why-us-card">
             <h4 class="icons">
@@ -158,44 +157,44 @@ function format_rupiah($total)
   <!-- Akhir Why Us Section -->
 
   <!-- Product Highlight -->
-  <section id="products" class="product-highlight-section">
-    <!-- Page Content -->
-    <h1 class="product-heading">Produk Terbaru</h1>
-    <div class="row row-cols-2 row-cols-sm-2 row-cols-md-4 row-cols-lg-4 row-cols-xxl-6 cards-container">
-      <?php foreach ($data as $barang) : ?>
-        <div class="card-body col-lg-5 col-md-4 col-sm-4  ">
-          <div class="card product-card">
-            <a href="">
-              <img src="./assets/function/img/<?= $barang['img']; ?>" class="product-card-img card-img-top mt-4 " alt="...">
-            </a>
-            <div class="card-body">
-              <span class="product-promo position-absolute top-0 start-0 bg-danger text-white">Promo</span>
-              <h5 class="product-titles"><?= $barang['nama_barang']; ?></h5>
-              <div class="product-price card-text">
-                <p class="real-price"><?= format_rupiah($barang['harga_barang']) ?></p>
-                <p class="discount-price"><?= format_rupiah($barang['harga_promo']) ?></p>
+
+  <div class="row">
+    <section id="products" class="product-highlight-section">
+      <!-- Page Content -->
+      <h1 class="product-heading">Produk Terbaru</h1>
+      <div class="cards-container">
+        <div class="row container-product">
+          <?php foreach ($data as $barang) : ?>
+            <div class="col-lg-3 col-md-4 col-sm-4 card-box">
+              <div class="card product-card">
+                <a href="">
+                  <img src="./assets/function/img/<?= $barang['img']; ?>" class="product-card-img card-img-top mt-4 img-fluid" alt="...">
+                </a>
+                <div class="card-body">
+                  <span class="product-promo position-absolute top-0 start-0 bg-danger text-white">Promo</span>
+                  <h5 class="product-titles"><?= $barang['nama_barang']; ?></h5>
+                  <div class="product-price card-text">
+                    <p class="real-price"><?= format_rupiah($barang['harga_barang']) ?></p>
+                    <p class="discount-price"><?= format_rupiah($barang['harga_promo']) ?></p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          <?php endforeach; ?>
         </div>
-      <?php endforeach; ?>
 
-
+      </div>
     </div>
-
-  </section>
-  <!-- Akhir Product Highlight -->
-
-  <!-- Footer -->
-  <div class="row container-footer">
-    <div class="col-12">
+    <!-- Footer -->
+    <div class="container-footer row">
       <?php
       include 'footer.php';
       ?>
-
     </div>
-  </div>
-  <!-- Akhir Footer -->
+    <!-- Akhir Footer -->
+  </section>
+  <!-- Akhir Product Highlight -->
+
 
   <!-- Option 2: Separate Popper and Bootstrap JS -->
 

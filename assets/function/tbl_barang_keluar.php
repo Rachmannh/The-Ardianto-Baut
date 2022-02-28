@@ -19,11 +19,13 @@ function format_rupiah($total)
 include 'template/header.php';
 $tampil = barang("SELECT * FROM data_barang,tbl_penjualan WHERE data_barang.id_barang = tbl_penjualan.id_barang");
 $value = "";
+$sampai = $value;
+$dari = $value;
 
 if (isset($_POST["cari"])) {
     $tampil = cariP($_POST["keyword"]);
     $value = $_POST['keyword'];
-}else if (isset($_POST['caridate'])) {
+} else if (isset($_POST['caridate'])) {
     $tampil = caridate2($_POST['dari'], $_POST['sampai']);
     $dari = $_POST['dari'];
     $sampai = $_POST['sampai'];
@@ -56,6 +58,7 @@ $no = 1;
                 </div>
             </div>
             <a href="tambah_transaksi.php" class="btn btn-success btn-sm mb-2 mt-1">Tambah Transaksi</a>
+            <a href="print_faktur.php" class="btn btn-warning btn-sm mb-2 mt-1 ms-2">Cetak</a>
             <thead>
                 <tr>
                     <th>No</th>

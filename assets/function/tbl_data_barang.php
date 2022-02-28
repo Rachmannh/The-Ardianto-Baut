@@ -18,7 +18,7 @@ function format_rupiah($total)
     return $angka;
 }
 
-$tampil = barang("SELECT  * FROM data_barang");
+$tampil = barang("SELECT * FROM data_barang ORDER BY kode_barang DESC");
 $value = "";
 $dari = "";
 $sampai = "";
@@ -68,7 +68,7 @@ include 'template/header.php';
                     <th>Gambar</th>
                     <th>Harga</th>
                     <th>Promo</th>
-                    <th>Diskon Promo</th>
+                    <th>Diskon</th>
                     <th>Total Harga</th>
                     <th>Action</th>
                 </tr>
