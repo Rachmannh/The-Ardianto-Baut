@@ -4,7 +4,7 @@ Membuat sebuah website baut untuk toko Ido Baut
 
 ## Authors
 
-- [@Rachmannh](https://github.com/Rachmannh)
+- [@Rachman](https://github.com/Rachmannh)
 - [@Yudha](https://github.com/lazyboy26)
 - [@Haikal](https://github.com/GrimsAlphaDev)
 
