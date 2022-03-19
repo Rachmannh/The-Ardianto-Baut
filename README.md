@@ -11,3 +11,4 @@ Membuat sebuah website baut untuk toko Ido Baut
 ## 🚀 About Me
 
 Kami adalah RagazzoTech, Sebuah Team Web Development yang berasal dari Indonesia
+( Kota Tangerang & Kota Cirebon )
