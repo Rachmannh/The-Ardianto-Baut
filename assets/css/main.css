@@ -618,10 +618,12 @@ body {
   transform: scale(1.5);
   transition: .5s;
 }
-.wrapper-gambar{
+
+.wrapper-gambar {
   width: 100%;
   overflow: hidden;
 }
+
 .info {
   background-color: #f1f0f0;
   width: auto;
@@ -943,3 +945,176 @@ body {
     width: 75%;
   }
 }
+
+/* Contact Page */
+
+.contact-header {
+  background-color: #D80032;
+}
+
+.heading-text {
+  font-family: var(--heading-font);
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  transition: 0.6s;
+}
+
+.c-details span {
+  font-weight: 300;
+  font-size: 13px
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  background-color: #d8003252;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 39px
+}
+
+.text1 {
+  font-size: 14px;
+  font-weight: 600
+}
+
+.text2 {
+  color: #a5aec0
+}
+
+.heading {
+  font-family: var(--heading-font);
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.sub-heading {
+  position: relative;
+  top: -5px;
+  left: 30px;
+  font-family: var(--sub-heading-font);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.geo-alt {
+  font-size: 30px;
+}
+
+.bi-phone {
+  font-size: 30px;
+}
+
+.bi-envelope {
+  font-size: 30px;
+}
+
+.maps {
+  position: relative;
+  top: auto;
+  margin-bottom: auto;
+}
+
+.contact-form {
+  position: relative;
+  margin: 5em 0 5em 0;
+}
+
+.heading {
+  position: relative;
+  font-family: var(--heading-font);
+  font-size: 40px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.btn-submit {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 50px 10px 50px;
+  background-color: #102B3F;
+  color: #FCFCFC;
+  font-family: var(--heading-font);
+}
+
+.btn-submit:hover {
+  background-color: #DE1A1A;
+  color: #FCFCFC;
+  transition: 0.6s;
+}
+
+/* FAQ Page */
+
+.faq-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.title {
+  position: relative;
+  margin: 30px 0 0 0;
+  font-family: var(--heading-font);
+  font-size: 40px;
+  font-weight: 500;
+  text-align: center;
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+
+  50% {
+    transform: translatey(-20px);
+  }
+
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+.accordion-item {
+  position: relative;
+  width: 30em;
+  height: auto;
+}
+
+.faq-images {
+  position: relative;
+  animation: float 5s ease-in infinite;
+}
+
+@media only screen and (max-width: 768px) {
+
+  /* For mobile phones: */
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .accordion {
+    position: relative;
+    margin: -50px 0 0 0;
+  }
+
+  .accordion-item {
+    position: relative;
+    width: 20rem;
+  }
+}
+
+/* Akhir FAQ Page */
