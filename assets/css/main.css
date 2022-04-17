@@ -645,6 +645,12 @@ body {
 .detail {
   margin: auto;
   display: block;
+  background-color:#D80032;
+}
+
+.detail:hover{
+  background-color: blue;
+  color: white;
 }
 
 .close-btn {
