@@ -15,8 +15,8 @@
                             <p class="stok-product">Stok : <?= $barang['stok'] ?></p>
                             <p class="stok-product">Harga : <?= format_rupiah($barang['harga_barang']) ?></p>
                         </div>
-                        <p class="card-text"></p>
-                        <a class="btn btn-primary detail" data-bs-toggle="modal" href="#Modal" role="button">Lihat Detail Barang</a>
+                        <br>
+                        <a class="btn text-white detail" data-bs-toggle="modal" href="#Modal" role="button">Lihat Detail Barang</a>
 
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                     <img src="./assets/function/img/<?= $barang['img']; ?>" class="card-img-top card-img gambar-hover" alt="...">
                 </div>
                 <div class="info mt-4">
-                    <h4 class="text-center"><?=$barang['nama_barang']?></h4>
+                    <h4 class="text-center"><?= $barang['nama_barang'] ?></h4>
                     <p class="stok-product">Stok : <?= $barang['stok'] ?></p>
                     <p class="stok-product">Harga : <?= format_rupiah($barang['harga_barang']) ?></p>
                 </div>
