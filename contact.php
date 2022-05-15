@@ -152,39 +152,42 @@
   <div class="right-card col">
     <div class="p-3">
       <!-- End of Right Card -->
-
+      <div class="alert alert-danger text-center d-none my-alerts" role="alert">
+        <strong>Terimakasih!</strong> Pesan anda sudah kami terima!
+    </div>
       <!-- Form -->
-    <form>
-    <!-- Fullname -->
-  <div class="form-floating mb-3">
-    <input type="fullname" id="floatingInput" class="form-control" placeholder="Masukan Nama Lengkap" required>
-    <label for="fullname" class="form-label">Nama Lengkap</label>
-  </div>
-  <!-- End of Fullname -->
-
-  <!-- Email -->
-  <div class="form-floating mb-3">
-    <input type="email" id="floatingInput" class="form-control" placeholder="Masukan Email Aktif Anda" required>
-    <label for="exampleInputEmail1" class="form-label">Email</label>
-  </div>
-  <!-- End of Email -->
-
-  <!-- Phone Number -->
-      <div class="form-floating mb-3">
-        <input type="phone" id="floatingInput" class="form-control" placeholder="Masukan Nomor Telfon" required>
-        <label for="phone" class="form-label">Nomor Telfon</label>
-      </div>
-  <!-- End of Phone Number -->
-
-  <!-- Message -->
-  <div class="form-floating mb-3">
-  <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 130px" required></textarea>
-  <label for="floatingTextarea2">Message</label>
-  </div>
-  <!-- End of Message -->
-
-  <button type="submit" class="btn btn-submit">Submit</button>
-</form>
+      <section class="contacts">
+        <div class="parent container"> 
+          <div class="my-alerts alert alert-warning alert-dismissible d-none fade show" role="alert">
+            <strong>Terimakasih</strong> Pesan anda sudah kami terima.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <br>
+          <br>
+          <form name="ardianto-baut-contact-form">
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" aria-describedby="email" name="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Nama Lengkap</label>
+              <input type="name" class="form-control" id="name" aria-describedby="name" name="nama" required>
+            </div>
+            <div class="mb-3">
+              <label for="whatsapp" class="form-label">Whatsapp</label>
+              <input type="whatsapp" class="form-control" id="whatsapp" name="whatsapp" required>
+            </div>
+            <div class="mb-3">
+              <label for="pesan" class="form-label">Pesan</label>
+              <textarea class="form-control" id="pesan" rows="4" name="pesan" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-danger btn-kirim">Submit</button>
+            <button class="btn btn-danger btn-loading d-none" type="button" disabled>
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              Loading...
+            </button>
+          </form>
+        </section> 
 <!-- End of Form -->
     </div>
   </div>
@@ -205,6 +208,64 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+    <!-- Form Initialize -->
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbxTb2fDkelKw490OcJNce5FEnda-OdmMfurpEmtKMNdCtk8x_xaDa2oRJ6WI17vTIR3hA/exec'
+      const form = document.forms['ardianto-baut-contact-form']
+      const btnKirim = document.querySelector('.btn-kirim');
+      const btnLoading = document.querySelector('.btn-loading');
+      const myAlerts = document.querySelector('.my-alerts')
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        // Ketika tombol submit di klik
+        // Tampilkan tombol loading, Hilangkan tombol kirim
+        btnLoading.classList.toggle('d-none');
+        btnKirim.classList.toggle('d-none');
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            // Tampilkan tombol kirim, Hilangkan tombol loading
+            btnLoading.classList.toggle('d-none');
+            btnKirim.classList.toggle('d-none');
+            // Tampilkan alert
+            myAlerts.classList.toggle('d-none');
+            // Reset formnya
+            form.reset();
+            console.log('Success!', response)
+          })
+          .catch(error => console.error('Error!', error.message))
+      })
+    </script>
+    <!-- End -->
+
+    <script>
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 500px from the top of the document, show the button
+    window.onscroll = function() {
+      scrollFunction()
+    };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+
+  <!-- Icon JS -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
   </body>
 </html>
