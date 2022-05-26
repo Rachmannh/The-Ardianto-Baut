@@ -47,9 +47,6 @@ include 'template/header.php';
             <input type="hidden" name="id_barang" value="<?php echo $tampil['id_barang']; ?>">
             <input type="hidden" name="gambarlama" value="<?php echo $tampil['img']; ?>">
 
-            <label for="kode_barang">Kode Barang</label>
-            <input type="text" value="<?php echo $tampil['kode_barang']; ?>" class="form-control" id="kode_barang" name="kdbarang" placeholder="Masukan Kode Barang"><br>
-
             <label for="nama_barang">Nama Barang</label>
             <input type="text" value="<?php echo $tampil['nama_barang']; ?>" class="form-control" id="nama_barang" name="nama" placeholder="Masukan Nama Barang"><br>
 
