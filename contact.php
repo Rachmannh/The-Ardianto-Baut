@@ -1,3 +1,9 @@
+<?php
+include './assets/function/functions.php';
+
+$title = 'Contact';
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -43,7 +49,7 @@
   <!-- Icon -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
-  <title>Ido Baut</title>
+  <title><?= $web ?> | <?= $title ?></title>
   </head>
   <body>
       
