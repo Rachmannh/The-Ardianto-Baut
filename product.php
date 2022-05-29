@@ -1,6 +1,7 @@
 <?php
 include './assets/function/functions.php';
 $data = barang("SELECT * FROM data_barang ORDER BY id_barang DESC");
+$title = 'Products';
 
 function format_rupiah($total)
 {
@@ -49,7 +50,11 @@ if (isset($_POST["cari"])) {
   <!-- Icon -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
-  <title>Ido Baut</title>
+  <!-- JQUERY -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+  <title><?= $web ?> | <?= $title ?></title>
 </head>
 
 <body>
@@ -82,6 +87,7 @@ if (isset($_POST["cari"])) {
           <div class="offcanvas-body bg-dark text-white">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li>Kategori Barang</li>
+
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Baut
@@ -92,13 +98,35 @@ if (isset($_POST["cari"])) {
                   $kategori = barang("SELECT * FROM data_barang WHERE kategori = 'baut' ORDER BY id_barang DESC");
                   foreach ($kategori as $barang) :
                   ?>
-                    <li><a class="dropdown-item" href="#">
+                    <li>
+                      <a class="dropdown-item" href="#">
                         <?= $barang['nama_barang']; ?>
-                      </a></li>
+                      </a>
+                    </li>
                     <li>
                     <?php endforeach; ?>
                 </ul>
               </li>
+
+              <?php
+              // Select Kategori Ring
+              $kategori = barang("SELECT * FROM data_barang WHERE kategori = 'ring' ORDER BY id_barang DESC");
+              foreach ($kategori as $barang) :
+              ?>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Ring
+                  </a>
+                  <ul class="dropdown-menu bg-dark" aria-labelledby="offcanvasNavbarDropdown">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <?= $barang['nama_barang']; ?>
+                      </a>
+                    </li>
+                    <li>
+                    <?php endforeach; ?>
+                  </ul>
+                </li>
             </ul>
             <form class="d-flex" method="POST" action="">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="keyword" value="<?= $value ?>">
@@ -114,7 +142,67 @@ if (isset($_POST["cari"])) {
 
   <!-- Article -->
   <div class="container-fluid card-container">
-    <?php include 'product-baut.php'; ?>
+    <div class="row">
+      <div class="product-title">
+        <h2>Our Product</h2>
+      </div>
+      <div class="row wrapper-cards mb-4">
+        <?php foreach ($data as $barang) : ?>
+          <div class="col-lg-2 col-md-4 col-sm-2 cards-space">
+            <a href="#modal" data-id="<?= $barang['id_barang']; ?>" class="dataBarang text-black text-decoration-none">
+              <div class="cards card">
+                <img src="./assets/function/img/<?= $barang['img']; ?>" class="card-img-top card-img" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title product-judul"><?= $barang['nama_barang']; ?></h5>
+                  <div class="info">
+                    <p class="stok-product">Stok : <?= $barang['stok'] ?></p>
+                    <p class="stok-product">Harga : <?= format_rupiah($barang['harga_barang']) ?></p>
+                  </div>
+                  <br>
+                  <button data-id="<?= $barang['id_barang']; ?>" class="dataBarang btn btn-primary w-100">Detail Barang</button>
+                </div>
+              </div>
+            </a>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </div>
+
+  <script type='text/javascript'>
+    $(document).ready(function() {
+      $('.dataBarang').click(function() {
+        var id = $(this).data('id');
+        // alert(id)
+        $.ajax({
+          url: 'product-baut.php',
+          type: 'post',
+          data: {
+            id: id
+          },
+          success: function(response) {
+            $('.modal-body').html(response);
+            $('#empModal').modal('show');
+          }
+        });
+      });
+    });
+  </script>
+  </div>
+  <div class="modal fade" id="empModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Detail Barang</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <a href="whatsapp:contact=015555555555@s.whatsapp.com&message=I'd like to chat with you" class="btn btn-success">Pesan</a>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- Akhir Article -->
 

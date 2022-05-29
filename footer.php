@@ -25,7 +25,7 @@
         <div class="footer-title col-2">
           <h5>Contact</h5>
           <ul class="nav flex-column">
-            <li class="navs-item mb-2"><a href="whatsapp:contact=015555555555@s.whatsapp.com&message=" I'd like to chat with you" class="navs-link p-0">Whatsapp</a></li>
+            <li class="navs-item mb-2"><a href="whatsapp:contact=015555555555@s.whatsapp.com&message=I'd like to chat with you" class="navs-link p-0">Whatsapp</a></li>
           </ul>
         </div>
 

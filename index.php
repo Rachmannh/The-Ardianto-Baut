@@ -7,6 +7,8 @@ function format_rupiah($total)
   $angka = "Rp." . number_format($total, 0, ',', '.');
   return $angka;
 }
+
+$title = 'Home';
 ?>
 <!doctype html>
 <html lang="en">
@@ -45,7 +47,9 @@ function format_rupiah($total)
   <!-- Icon -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
-  <title>Ido Baut</title>
+  <title>
+    <?= $web ?> | <?= $title ?>
+  </title>
 </head>
 
 <body>
@@ -164,34 +168,35 @@ function format_rupiah($total)
       <h1 class="product-heading">Produk Terbaru</h1>
       <div class="cards-container">
         <div class="row container-product">
+
           <?php foreach ($data as $barang) : ?>
-            <div class="col-lg-3 col-md-4 col-sm-4 card-box">
+            <div class="col-lg-4 col-md-4 col-sm-4 card-box">
+              <a href="product.php" class="text-decoration-none text-dark">
               <div class="card product-card">
-                <a href="">
                   <img src="./assets/function/img/<?= $barang['img']; ?>" class="product-card-img card-img-top mt-4 img-fluid" alt="...">
-                </a>
-                <div class="card-body">
-                  <span class="product-promo position-absolute top-0 start-0 bg-danger text-white">Promo</span>
-                  <h5 class="product-titles"><?= $barang['nama_barang']; ?></h5>
-                  <div class="product-price card-text">
-                    <p class="real-price"><?= format_rupiah($barang['harga_barang']) ?></p>
-                    <p class="discount-price"><?= format_rupiah($barang['harga_promo']) ?></p>
+                  <div class="card-body">
+                    <span class="product-promo position-absolute top-0 start-0 bg-danger text-white">Promo</span>
+                    <h5 class="product-titles"><?= $barang['nama_barang']; ?></h5>
+                    <div class="product-price card-text">
+                      <p class="real-price"><?= format_rupiah($barang['harga_barang']) ?></p>
+                      <p class="discount-price"><?= format_rupiah($barang['harga_promo']) ?></p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </a>
             </div>
           <?php endforeach; ?>
         </div>
 
       </div>
-    </div>
-    <!-- Footer -->
-    <div class="container-footer row">
-      <?php
-      include 'footer.php';
-      ?>
-    </div>
-    <!-- Akhir Footer -->
+  </div>
+  <!-- Footer -->
+  <div class="container-footer row">
+    <?php
+    include 'footer.php';
+    ?>
+  </div>
+  <!-- Akhir Footer -->
   </section>
   <!-- Akhir Product Highlight -->
 

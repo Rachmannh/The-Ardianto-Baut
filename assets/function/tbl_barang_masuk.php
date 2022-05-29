@@ -30,7 +30,6 @@ if (isset($_POST["submit"])) {
         ";
     }
 
-    var_dump($_POST);
 }
 
 include 'template/header.php';
@@ -44,9 +43,6 @@ include 'template/header.php';
         <br>
 
         <form action="" method="post" enctype="multipart/form-data">
-
-            <label for="kode_barang">Kode Barang</label>
-            <input type="text" class="form-control" id="kode_barang" name="kdbarang" placeholder="Masukan Kode Barang"><br>
 
             <label for="nama_barang">Nama Barang</label>
             <input type="text" class="form-control" id="nama_barang" name="nama" placeholder="Masukan Nama Barang"><br>

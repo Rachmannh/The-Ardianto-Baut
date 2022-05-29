@@ -1,7 +1,10 @@
 <?php
-define('BASE_URL', 'http://localhost/ido-baut-main/assets/function/');
+define('BASE_URL', 'http://localhost:8080/the-ardianto-baut/assets/function/');
 // koneksi ke dbms
 $conn = mysqli_connect("localhost", "root", "", "alchemist_baut");
+
+$web = 'The Ardianto Baut';
+
 
 function barang($data)
 {
@@ -66,7 +69,6 @@ function caridate2($dari,$sampai)
 function tambah($info)
 {
 	global $conn;
-	$kdbarang = $info["kdbarang"];
 	$nama = $info["nama"];
 	$stok = $info["stok"];
 	$harga = $info["harga"];
@@ -74,9 +76,24 @@ function tambah($info)
 	$promo = $info['promo'];
 	$diskonpromo = (int)$info['diskonPromo'];
 
+	// ambil data barang terbaru
+	$query = barang("SELECT * FROM data_barang ORDER BY kode_barang DESC LIMIT 1");
+	if ($query == null){
+		$kode_barang = "KD001";
+	}else {
+	$kode_barang = $query[0]["kode_barang"];
+	$kode_barang = substr($kode_barang, -3);
+	$kode_barang = (int)$kode_barang;
+	$kode_barang++;
+	$kode_barang = str_pad($kode_barang, 3, '0', STR_PAD_LEFT);
+	$kode_barang = "KD" . $kode_barang;
+	}
+	
+
 	if($info['promo'] == 'Tidak'){
 		$totaldiskon = 0;
 	}
+
 	$gambar = upload();
 	if (!$gambar) {
 		return false;
@@ -89,7 +106,7 @@ function tambah($info)
 
 
 	$query = "INSERT INTO data_barang VALUES 
-			('','$kdbarang','$nama','$stok','$harga','$gambar','$kategori','$promo','$diskonpromo','$hargapromo','$totaldiskon',CURDATE(),CURDATE()) ";
+			('','$kode_barang','$nama','$stok','$harga','$gambar','$kategori','$promo','$diskonpromo','$hargapromo','$totaldiskon',CURDATE(),CURDATE()) ";
 	mysqli_query($conn, $query);
 
 	return mysqli_affected_rows($conn);
@@ -148,7 +165,6 @@ function edit($data)
 {
 	global $conn;
 	$id = $data["id_barang"];
-	$kdbarang = $data["kdbarang"];
 	$nama = $data["nama"];
 	$stok = $data["stok"];
 	$harga = $data["harga"];
@@ -173,7 +189,6 @@ function edit($data)
 	$hargapromo = $harga - $diskonawal;
 
 	$query = "UPDATE data_barang SET 
-			kode_barang = '$kdbarang',
 			nama_barang = '$nama',
 			stok = '$stok',
 			harga_barang = '$harga',
