@@ -138,34 +138,45 @@ $title = 'Contact';
 </section>
   <!-- Akhir Konten -->
 
-  <!-- Contact Form -->
-  <section class="contact-form">
-    <div class="container">
-    <h1 class="heading">
-        Contact Form
-      </h1>
-<div class="row gx-3 gx-xxl-5">
-
   <!-- Maps -->
-  <div class="left-card col">
+  <section class="maps">
+    <div class="container">
+    <h1 class="heading mt-5">
+        Our Location
+      </h1>
+       <!-- Maps -->
+       <div data-aos="fade-up" data-aos-duration="1000">
+  <div class="col">
     <div class="p-3">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d807.0162237961207!2d106.63585352915426!3d-6.178084066404299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f8d6b838a779%3A0x4d53a6eab0d615cb!2sJl.%20Ir.%20Sutami%2C%20RT.004%2FRW.014%2C%20Sukasari%2C%20Kec.%20Tangerang%2C%20Kota%20Tangerang%2C%20Banten%2015118!5e1!3m2!1sen!2sid!4v1647539785069!5m2!1sen!2sid" width="100%" height="450" class="maps" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
   </div>
+  </div>
   <!-- End of Maps -->
-
-  <!-- Right Card -->
-  <div class="right-card col">
-    <div class="p-3">
-      <!-- End of Right Card -->
-      <div class="alert alert-danger text-center d-none my-alerts" role="alert">
-        <strong>Terimakasih!</strong> Pesan anda sudah kami terima!
     </div>
+  </section>
+  <!-- End -->
+
+  <!-- Contact Form -->
+  <section class="contact-form">
+    <div class="container">
+    <div data-aos="flip-up" data-aos-duration="2000">
+    <h1 class="heading">
+        Contact Form
+      </h1>
+      </div>
+
+<div class="container">
+
+<div data-aos="zoom-in" data-aos-duration="2500">
+  <!-- Contact Form -->
+  <div class="contact-form col">
+    <div style="margin-top: -50px;">
       <!-- Form -->
       <section class="contacts">
         <div class="parent container"> 
-          <div class="my-alerts alert alert-warning alert-dismissible d-none fade show" role="alert">
-            <strong>Terimakasih</strong> Pesan anda sudah kami terima.
+          <div class="my-alerts alert alert-success alert-dismissible d-none fade show" role="alert">
+            <strong>Terimakasih!!</strong> Pesan anda sudah kami terima.
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
           <br>
@@ -197,6 +208,7 @@ $title = 'Contact';
 <!-- End of Form -->
     </div>
   </div>
+</div>
 </div>
     </div>
   </section>
@@ -268,6 +280,13 @@ $title = 'Contact';
       document.documentElement.scrollTop = 0;
     }
   </script>
+
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+  AOS.init();
+</script>
 
   <!-- Icon JS -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

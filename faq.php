@@ -67,7 +67,7 @@
                Frequently Ask Questions
            </h1>
 <div class="row gx-3 gx-xxl-5 mt-5">
-  <div class="col">
+  <div class="faq-section col">
     <div class="p-3">
     <div class="accordion accordion-flush" id="accordionFlushExample">
 
@@ -130,7 +130,7 @@
         Lorem Ipsum Lorem Lorem
       </button>
     </h2>
-    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+    <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos esse mollitia reiciendis quod nisi, accusamus hic sequi vero tempore, non provident dolores perspiciatis. Quod quas asperiores, expedita non similique deserunt, cum odit voluptatibus, maiores perspiciatis quasi itaque exercitationem incidunt officia?</div>
     </div>
   </div>
@@ -138,8 +138,8 @@
 
   <!-- Accordion 6 -->
   <div class="accordion-item">
-    <h2 class="accordion-header bg-danger" id="flush-headingSix">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+    <h2 class="accordion-header " id="flush-headingSix">
+      <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
         Lorem Ipsum Lorem Lorem
       </button>
     </h2>
@@ -151,7 +151,7 @@
 
   <!-- Accordion 7 -->
   <div class="accordion-item">
-    <h2 class="accordion-header bg-danger" id="flush-headingSeven">
+    <h2 class="accordion-header" id="flush-headingSeven">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
         Lorem Ipsum Lorem Lorem
       </button>
@@ -187,6 +187,17 @@
 
    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+    <!-- Accardion JS -->
+    <script>
+      $(document).ready(function() {
+    $(".accardion-collapse").hide();
+    $(".accardion-item").click(function() {
+        $(this).next(".accardion-collapse").slideAccardion("normal");
+        $(this).accardionClass('active'); //toggle class active
+    });
+});
+    </script>
 
   </body>
 </html>
