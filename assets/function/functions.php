@@ -1,5 +1,5 @@
 <?php
-define('BASE_URL', 'http://localhost:8080/the-ardianto-baut/assets/function/');
+define('BASE_URL', 'http://localhost/the-ardianto-baut/assets/function/');
 // koneksi ke dbms
 $conn = mysqli_connect("localhost", "root", "", "alchemist_baut");
 

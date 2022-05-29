@@ -86,48 +86,31 @@ if (isset($_POST["cari"])) {
           </div>
           <div class="offcanvas-body bg-dark text-white">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <!-- Ambil Kategori Yang Ada -->
+              <?php
+              $categories = barang("SELECT DISTINCT kategori FROM data_barang");
+              ?>
               <li>Kategori Barang</li>
 
+              <?php foreach ($categories as $category) : ?>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Baut
+                  <?= $category['kategori'] ?>
                 </a>
                 <ul class="dropdown-menu bg-dark" aria-labelledby="offcanvasNavbarDropdown">
-                  <?php
-                  // Select Kategori Baut
-                  $kategori = barang("SELECT * FROM data_barang WHERE kategori = 'baut' ORDER BY id_barang DESC");
-                  foreach ($kategori as $barang) :
-                  ?>
+                  <?php $barang = barang("SELECT * FROM data_barang WHERE kategori = '$category[kategori]'"); ?>
+                  <?php foreach ($barang as $brg) : ?>
                     <li>
-                      <a class="dropdown-item" href="#">
-                        <?= $barang['nama_barang']; ?>
-                      </a>
+                      
+                      <form action="" method="POST">
+                      <a href="#modal" data-id="<?= $brg['id_barang']; ?>" class="dataBarang dropdown-item"> <?= $brg['nama_barang']?> </a>
                     </li>
-                    <li>
-                    <?php endforeach; ?>
+                  <?php endforeach; ?>
+                    <!-- <li> -->
                 </ul>
-              </li>
-
-              <?php
-              // Select Kategori Ring
-              $kategori = barang("SELECT * FROM data_barang WHERE kategori = 'ring' ORDER BY id_barang DESC");
-              foreach ($kategori as $barang) :
-              ?>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Ring
-                  </a>
-                  <ul class="dropdown-menu bg-dark" aria-labelledby="offcanvasNavbarDropdown">
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <?= $barang['nama_barang']; ?>
-                      </a>
-                    </li>
-                    <li>
-                    <?php endforeach; ?>
-                  </ul>
-                </li>
-            </ul>
+              <!-- </li> -->
+              <?php endforeach; ?>
+              
             <form class="d-flex" method="POST" action="">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="keyword" value="<?= $value ?>">
               <button class="btn btn-outline-secondary" type="submit" name="cari">Search</button>
@@ -135,10 +118,16 @@ if (isset($_POST["cari"])) {
           </div>
         </div>
       </div>
+      <!-- Tombol Reset Filter -->
+      <?php if(isset($_POST['cari'])) : ?>
+        <a href="/the-ardianto-baut/product.php">Reset Filter</a>
+        <?php endif ?>
     </nav>
     <!-- Akhir Navs -->
+    
   </div>
 
+  <?php ?>
 
   <!-- Article -->
   <div class="container-fluid card-container">
@@ -148,7 +137,7 @@ if (isset($_POST["cari"])) {
       </div>
       <div class="row wrapper-cards mb-4">
         <?php foreach ($data as $barang) : ?>
-          <div class="col-lg-2 col-md-4 col-sm-2 cards-space">
+          <div class="col-lg-2 col-md-4 col-sm-2 cards-space mb-3">
             <a href="#modal" data-id="<?= $barang['id_barang']; ?>" class="dataBarang text-black text-decoration-none">
               <div class="cards card">
                 <img src="./assets/function/img/<?= $barang['img']; ?>" class="card-img-top card-img" alt="...">
@@ -213,6 +202,14 @@ if (isset($_POST["cari"])) {
     ?>
   </div>
   <!-- Akhir Footer -->
+
+  <!-- Unused Filter -->
+  <!-- 
+     <form action="" method="POST">
+                          <input type="hidden" name="keyword" class="form-control" value="<?= $brg['kategori'] ?>">
+                          <button type="submit"  name="cari" class="dropdown-item"><?= $brg['nama_barang']?></button>
+                        </form>
+   -->
 
   <!-- Option 2: Separate Popper and Bootstrap JS -->
 
