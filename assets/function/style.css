@@ -1,79 +1,77 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
 
-
 :root {
-    --navbar-font: 'Hind Madurai', sans-serif;
-    --heading-font: 'Hind Madurai', sans-serif;
-    --sub-heading-font: 'Martel Sans', sans-serif;
-  }
-  
+    --navbar-font: "Hind Madurai", sans-serif;
+    --heading-font: "Hind Madurai", sans-serif;
+    --sub-heading-font: "Martel Sans", sans-serif;
+}
 
-
-body{
+body {
     overflow-x: hidden;
     font-family: var(--sub-heading-font);
 }
-.nav-side{
+
+.nav-side {
     width: 15%;
     height: 100vh;
-    background-color: #BD2436;
+    background-color: #bd2436;
     position: fixed;
 }
-.nav-side .title{
-    color: #FCFCFC;
+
+.nav-side .title {
+    color: #fcfcfc;
     padding: 20px;
     text-decoration: none;
     text-align: center;
 }
 
-.nav-side ul{
+.nav-side ul {
     margin: 0px;
     padding-left: 0px;
 }
 
-.nav-list li{
+.nav-list li {
     list-style: none;
-    
 }
-.nav-list a{
+
+.nav-list a {
     text-decoration: none;
-    background-color: #BD2436;
-    color: #FCFCFC;
+    background-color: #bd2436;
+    color: #fcfcfc;
     padding: 20px;
     margin: 0px;
-    border-top: 1px solid #FCFCFC;
-    border-bottom: 1px solid #FCFCFC;
+    border-top: 1px solid #fcfcfc;
+    border-bottom: 1px solid #fcfcfc;
     display: block;
 }
 
-.nav-list a:hover{
-    background-color: #EF233C;
-    color: #FCFCFC;
-    
+.nav-list a:hover {
+    background-color: #ef233c;
+    color: #fcfcfc;
 }
 
-.nav-list .icon{
+.nav-list .icon {
     font-size: 18px;
     padding: 12px;
 }
 
-.form ul li{
+.form ul li {
     list-style: none;
 }
 
-.info-index{
+.info-index {
     z-index: -1;
 }
 
-.tbl_keluar{
-    margin-left:15%;
+.tbl_keluar {
+    margin-left: 15%;
     display: block;
     position: fixed;
 }
 
 /* STYLE LOGIN */
 
-.form-bg{
+.form-bg {
     /* background-color: #F40000; */
     background-color: rgb(240, 240, 240);
     color: black;
@@ -81,8 +79,9 @@ body{
     border-radius: 5px;
     border: 1px solid black;
 }
-.title{
-    font-family: 'Roboto', monospace;
+
+.title {
+    font-family: "Roboto", monospace;
     display: flex;
     text-align: center;
     align-items: center;
@@ -91,63 +90,61 @@ body{
     vertical-align: baseline;
 }
 
-.form-style{
+.form-style {
     border: 0px;
-    border-bottom: 1px solid black ;
+    border-bottom: 1px solid black;
     background: transparent;
     color: black;
 }
 
-.form-style:hover{
+.form-style:hover {
     background: rgba(0, 0, 0, 0.096);
-    transition: .2s;
+    transition: 0.2s;
 }
 
-.see{
+.see {
     display: flex;
     align-items: center;
     justify-content: start;
     font-size: 12px;
     margin: auto;
     vertical-align: baseline;
-    margin-top: 5px ;
+    margin-top: 5px;
 }
 
-.seepass{
+.seepass {
     margin-left: 5px;
     text-decoration: none;
     color: black;
 }
 
-.seepass label:hover{
+.seepass label:hover {
     cursor: pointer;
 }
 
-.see:hover{
+.see:hover {
     cursor: pointer;
 }
 
-@media only screen and (max-width:600px) {
-
-}
+@media only screen and (max-width: 600px) {}
 
 /* Buttons */
 
 .btn-info {
-    background-color: #2B2D42;
-    border-color: #2B2D42;
-    color: #EDF2F4;
+    background-color: #2b2d42;
+    border-color: #2b2d42;
+    color: #edf2f4;
 }
 
 .btn-info:hover {
     transition: 0.5s;
-    background-color: #8D99AE;
-    border-color: #8D99AE;
+    background-color: #8d99ae;
+    border-color: #8d99ae;
 }
 
 .btn-success {
-    background-color: #07914C;
-    border-color: #07914C;
+    background-color: #07914c;
+    border-color: #07914c;
 }
 
 .btn-success:hover {
@@ -157,11 +154,11 @@ body{
 }
 
 .btn-warning {
-    background-color: #FFC800;
-    border-color: #FFC800;
+    background-color: #ffc800;
+    border-color: #ffc800;
 }
 
 .btn-warning:hover {
-    background-color: #E98A15;
-    border-color: #E98A15;
+    background-color: #e98a15;
+    border-color: #e98a15;
 }
