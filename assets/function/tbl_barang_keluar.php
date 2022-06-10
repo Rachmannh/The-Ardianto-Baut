@@ -1,17 +1,17 @@
 <link rel="stylesheet" href="style.css">
 
 <?php
-session_start();
+// session_start();
 require 'functions.php';
 
-if (!isset($_SESSION["login"])) {
-    echo "
-			<script>
-			alert('Silahkan Login Terlebih Dahulu');
-			document.location.href = 'login.php';
-			</script>
-	";
-}
+// if (!isset($_SESSION["login"])) {
+//     echo "
+// 			<script>
+// 			alert('Silahkan Login Terlebih Dahulu');
+// 			document.location.href = 'login.php';
+// 			</script>
+// 	";
+// }
 
 function format_rupiah($total)
 {
@@ -37,25 +37,22 @@ $no = 1;
 ?>
 
 <!-- Content -->
-<link rel="stylesheet" href="style.css">
-<div class="tbl_keluar">
-    <div class="col-10" style="margin: 20px;">
+<div class="tbl">
+    <div class="col-12">
         <table class="table table-striped table-hover table-light table-bordered">
             <h1>Data Barang Keluar</h1>
             <div class="row">
-                <div class="col-3">
+                <div class="col-12 d-flex">
                     <form action="" method="post">
-                        <label for="cari" style="font-size: 15px">Cari Barang :</label>
+                        <label for="cari" style="font-size: 15px" class="me-2">Cari Barang : </label>
                         <input id="cari" class="mb-3 input-control-sm" type="text" name="keyword" placeholder="Masukkan Kode / Nama Barang" autocomplete="off" value="<?= $value; ?>">
-                        <button type="submit" class="btn btn-info btn-sm mb-2 mt-1 ps-3 pe-3" name="cari">Cari</button>
+                        <button type="submit" class="btn btn-info btn-sm ps-3 pe-3 ms-2 me-2 h-75" name="cari">Cari</button>
                     </form>
-                </div>
-                <div class="col-6">
                     <form action="" method="post">
-                        <label for="cari" style="font-size: 15px">Cari Barang :</label><br>
-                        <input id="cari" class="mb-3 input-control-sm" type="date" name="dari" placeholder="Masukkan Kode / Nama Barang" autocomplete="off" value="<?= $dari; ?>">s/d
+                        <!-- <label for="cari" style="font-size: 15px">Cari Barang :</label><br> -->
+                        <input id="cari" class="mb-3 input-control-sm" type="date" name="dari" placeholder="Masukkan Kode / Nama Barang" autocomplete="off" value="<?= $dari; ?>"> s/d 
                         <input id="cari" class="mb-3 input-control-sm" type="date" name="sampai" placeholder="Masukkan Kode / Nama Barang" autocomplete="off" value="<?= $sampai; ?>">
-                        <button type="submit" class="btn btn-info btn-sm mb-2 mt-1 ps-3 pe-3" name="caridate">Cari</button>
+                        <button type="submit" class="btn btn-info btn-sm ps-3 pe-3 ms-2 me-2 h-75" name="caridate">Cari</button>
                     </form>
                 </div>
             </div>
@@ -89,8 +86,8 @@ $no = 1;
                         <td><?= format_rupiah($arr['total']) ?> </td>
                         <td>
 
-                            <a href="edit_penjualan.php?id=<?= $arr['id_penjualan'] ?>" class="btn btn-warning">Edit</a>
-                            <a href="hapus_penjualan.php?id=<?= $arr['id_penjualan'] ?>" onclick="return confirm('Apakah Anda Yakin ?')" class="btn btn-danger">Hapus</a>
+                            <a href="edit_penjualan.php?id=<?= $arr['id_penjualan'] ?>" class="btn btn-warning"><i class='bx bx-edit'></i></a>
+                            <a href="hapus_penjualan.php?id=<?= $arr['id_penjualan'] ?>" onclick="return confirm('Apakah Anda Yakin ?')" class="btn btn-danger"><i class='bx bx-x'></i></a>
 
                         </td>
                     </tr>

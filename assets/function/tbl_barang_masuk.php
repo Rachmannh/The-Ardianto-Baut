@@ -36,7 +36,7 @@ include 'template/header.php';
 ?>
 <!-- Content -->
 
-<div class="dashboard col-9 m-1" style="margin: 20px;">
+<div class="dashboard col-12 m-2">
     <div class="form-group">
 
         <h2>Tambah Data Barang</h2>
