@@ -1,24 +1,25 @@
 <link rel="stylesheet" href="style.css">
 
 <?php
-// session_start();
+
+session_start();
 require 'functions.php';
 
-// if (!isset($_SESSION["login"])) {
-//     echo "
-// 			<script>
-// 			alert('Silahkan Login Terlebih Dahulu');
-// 			document.location.href = 'login.php';
-// 			</script>
-// 	";
-// }
+if (!isset($_SESSION["login"])) {
+    echo "
+			<script>
+			alert('Silahkan Login Terlebih Dahulu');
+			document.location.href = 'login.php';
+			</script>
+	";
+}
 
 function format_rupiah($total)
 {
     $angka = "Rp." . number_format($total, 2, ',', '.');
     return $angka;
 }
-include 'template/header.php';
+
 $tampil = barang("SELECT * FROM data_barang,tbl_penjualan WHERE data_barang.id_barang = tbl_penjualan.id_barang");
 $value = "";
 $sampai = $value;
@@ -33,15 +34,15 @@ if (isset($_POST["cari"])) {
     $sampai = $_POST['sampai'];
 }
 
-$no = 1;
+include 'template/header.php';
 ?>
 
 <!-- Content -->
 <div class="tbl">
-    <div class="col-12">
-        <table class="table table-striped table-hover table-light table-bordered">
-            <h1>Data Barang Keluar</h1>
-            <div class="row">
+    <div class="col-10 m-2">
+    <h1>Data Barang Keluar</h1>
+        <table class="table table-striped table-hover table-light table-bordered" >
+        <div class="row">
                 <div class="col-12 d-flex">
                     <form action="" method="post">
                         <label for="cari" style="font-size: 15px" class="me-2">Cari Barang : </label>
@@ -58,6 +59,9 @@ $no = 1;
             </div>
             <a href="tambah_transaksi.php" class="btn btn-success btn-sm mb-2 mt-1">Tambah Transaksi</a>
             <a href="print_faktur.php" class="btn btn-warning btn-sm mb-2 mt-1 ms-2">Cetak</a>
+            <?php if (isset($_POST['cari']) || isset($_POST['caridate'])) : ?>
+                <a href="tbl_barang_keluar.php" class="btn btn-danger btn-sm mb-2 mt-1 ms-2">Reset</a>
+            <?php endif; ?>
             <thead>
                 <tr>
                     <th>No</th>
@@ -73,6 +77,7 @@ $no = 1;
                 </tr>
             </thead>
             <tbody>
+                <?php $no = 1 ; ?>
                 <?php foreach ($tampil as $arr) : ?>
                     <tr>
                         <td><?= $no++ ?> </td>
@@ -110,10 +115,4 @@ $no = 1;
     </div>
 </div>
 <!-- End Content -->
-</div>
-</div>
-</div>
-
-</body>
-
-</html>
+<?php include 'template/footer.php'; ?>

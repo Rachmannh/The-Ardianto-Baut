@@ -2,17 +2,17 @@
 
 <?php
 
-// session_start();
+session_start();
 require 'functions.php';
 
-// if (!isset($_SESSION["login"])) {
-//     echo "
-// 			<script>
-// 			alert('Silahkan Login Terlebih Dahulu');
-// 			document.location.href = 'login.php';
-// 			</script>
-// 	";
-// }
+if (!isset($_SESSION["login"])) {
+    echo "
+			<script>
+			alert('Silahkan Login Terlebih Dahulu');
+			document.location.href = 'login.php';
+			</script>
+	";
+}
 
 function format_rupiah($total)
 {
@@ -28,7 +28,7 @@ $sampai = "";
 if (isset($_POST["cari"])) {
     $tampil = cari($_POST["keyword"]);
     $value = $_POST['keyword'];
-}else if (isset($_POST['caridate'])) {
+} else if (isset($_POST['caridate'])) {
     $tampil = caridate($_POST['dari'], $_POST['sampai']);
     $dari = $_POST['dari'];
     $sampai = $_POST['sampai'];
@@ -57,6 +57,9 @@ include 'template/header.php';
                     </form>
                 </div>
             </div>
+            <?php if (isset($_POST['cari']) || isset($_POST['caridate'])) : ?>
+                <a href="tbl_data_barang.php" class="btn btn-danger btn-sm mb-2 mt-1 ms-2">Reset</a>
+            <?php endif; ?>
             <thead>
                 <tr>
                     <th>No</th>
