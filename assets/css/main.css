@@ -5,7 +5,7 @@
 }
 
 html {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   scroll-behavior: smooth;
 }
 
@@ -20,8 +20,7 @@ body {
   --navbar-font: 'Hind Madurai', sans-serif;
   --heading-font: 'Hind Madurai', sans-serif;
   --sub-heading-font: 'Martel Sans', sans-serif;
-}
-
+} 
 
 /* Landing Page */
 
@@ -481,6 +480,18 @@ body {
 
 .developer:hover {
   color: #D80032;
+}
+
+@media (min-width:641px)  {
+  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  .footer {
+    position: relative;
+  }
+  .logo-pembayaran {
+    position: relative;
+    width: auto;
+    margin: auto;
+  }
 }
 
 /* Akhir Footer */
