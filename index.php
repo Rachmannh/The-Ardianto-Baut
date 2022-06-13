@@ -1,5 +1,6 @@
 <?php
 include './assets/function/functions.php';
+$title = 'Home';
 $data = barang("SELECT * FROM data_barang WHERE status = 'promo' ORDER BY id_barang DESC");
 
 function format_rupiah($total)
