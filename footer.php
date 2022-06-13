@@ -5,29 +5,28 @@
         <div class="footer-title col-2">
           <h5>Link</h5>
           <ul class="nav flex-column">
-            <li class="navs-item mb-2"><a href="index.html" class="navs-link p-0">Home</a></li>
-            <li class="navs-item mb-2"><a href="about.html" class="navs-link p-0">About</a></li>
-            <li class="navs-item mb-2"><a href="" class="navs-link p-0">Product</a></li>
-            <li class="navs-item mb-2"><a href="" class="navs-link p-0">Contact</a></li>
+            <li class="navs-item mb-2"><a href="index.php" class="navs-link p-0">Home</a></li>
+            <li class="navs-item mb-2"><a href="about.php" class="navs-link p-0">About</a></li>
+            <li class="navs-item mb-2"><a href="product.php" class="navs-link p-0">Product</a></li>
           </ul>
         </div>
 
         <div class="footer-title col-2">
           <h5>Info</h5>
           <ul class="nav flex-column">
-            <li class="navs-item mb-2"><a href="" class="navs-link p-0">Pemesanan</a></li>
-            <li class="navs-item mb-2"><a href="" class="navs-link p-0">Pengiriman</a></li>
-            <li class="navs-item mb-2"><a href="" class="navs-link p-0">FaQ</a></li>
-            <li class="navs-item mb-2"><a href="" class="navs-link p-0">Terms & Conditions</a></li>
-          </ul>
+           <li class="navs-item mb-2"><a href="terms.php" class="navs-link p-0">Terms & Condition</a></li>
+           <li class="navs-item mb-2"><a href="faq.php" class="navs-link p-0">FaQ</a></li>
+            <li class="navs-item mb-2"><a href="contact.php" class="navs-link p-0">Contact</a></li>
+          <ul>
         </div>
 
         <div class="footer-title col-2">
-          <h5>Contact</h5>
+          <h5>Kontak</h5>
           <ul class="nav flex-column">
-            <li class="navs-item mb-2"><a href="whatsapp:contact=015555555555@s.whatsapp.com&message=I'd like to chat with you" class="navs-link p-0">Whatsapp</a></li>
-          </ul>
+             <li class="navs-item mb-2"><a href="whatsapp:contact=015555555555@s.whatsapp.com&message=I'd like to chat with you" class="navs-link p-0">Whatsapp</a></li>
+             </ul>
         </div>
+
 
         <div class="col-4 offset-1 pembayaran">
           <form>

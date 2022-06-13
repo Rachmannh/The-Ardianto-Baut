@@ -89,7 +89,7 @@ $title = 'About';
           <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
         </div>
         <div class="col-10 col-sm-8 col-lg-6">
-            <img src="./assets/img/pexels-photo-3821384.jpeg" class="ido-warehouse d-block mx-lg-auto img-fluid" alt="Foto Ido Baut" width="700" height="500" loading="lazy">
+            <img src="./assets/img/pexels-photo-259988.jpeg" class="ido-warehouse d-block mx-lg-auto img-fluid" alt="Foto Ido Baut" width="700" height="500" loading="lazy">
           </div>
       </div>
   </div>

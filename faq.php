@@ -167,7 +167,7 @@
   </div>
   <div class="col">
     <div class="p-3">
-    <img src="./assets/img/faq.png" class="faq-images img-fluid" alt="FaQ Illustration">
+    <img src="./assets/img/reshot-illustration-customer-service-call-center-8PXMF3JHDC.png" class="faq-images img-fluid" alt="FaQ Illustration">
     </div>
   </div>
 </div>
