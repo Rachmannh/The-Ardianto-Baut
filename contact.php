@@ -80,13 +80,13 @@ $title = 'Contact';
 <!-- Card 1 -->
 <div class="container mt-5 mb-3">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 mb-3">
             <div class="card p-3 mb-2">
                 <div class="d-flex justify-content-between">
                     <div class="d-flex flex-row align-items-center mt-3">
                         <div class="icon"> <img src="./assets/img/location.png" alt="geo-alt"> </div>
                         <div class="ms-2 c-details">
-                            <h6 class="heading mb-0">Location</h6>
+                            <h6 class="card-heading mb-0">Location</h6>
                         </div>
                     </div>
                 </div>
@@ -98,13 +98,13 @@ $title = 'Contact';
         <!-- End of Card 1 -->
 
         <!-- Card 2 -->
-        <div class="col-md-4">
+        <div class="col-md-4 mb-3">
             <div class="card p-3 mb-2">
                 <div class="d-flex justify-content-between">
                     <div class="d-flex flex-row align-items-center mt-3">
                         <div class="icon"> <img src="./assets/img/phone.png" alt="phone"> </div>
                         <div class="ms-2 c-details">
-                            <h6 class="heading mb-0">Phone</h6>
+                            <h6 class="card-heading mb-0">Phone</h6>
                         </div>
                     </div>
                 </div>
@@ -116,13 +116,13 @@ $title = 'Contact';
         <!-- End of Card 2 -->
 
         <!-- Card 3 -->
-        <div class="col-md-4">
+        <div class="col-md-4 mb-3">
             <div class="card p-3 mb-2">
                 <div class="d-flex justify-content-between">
                     <div class="d-flex flex-row align-items-center mt-3">
-                        <div class="icon"> <img src="./assets/img/envelope.png" alt="envelope"> </div>
-                        <div class="ms-2 c-details">
-                            <h6 class="heading mb-0">Email</h6>
+                      <div class="ms-2 c-details">
+                          <div class="icon"> <img src="./assets/img/envelope.png" alt="envelope"> </div>
+                            <h6 class="card-heading mb-0">Email</h6>
                         </div>
                     </div>
                 </div>

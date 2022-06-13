@@ -1,5 +1,6 @@
 <?php
 include './assets/function/functions.php';
+$title = 'Home';
 $data = barang("SELECT * FROM data_barang WHERE status = 'promo' ORDER BY id_barang DESC");
 
 function format_rupiah($total)
@@ -107,57 +108,57 @@ function format_rupiah($total)
 
       <!-- Page Heading -->
       <div data-aos="fade-up" data-aos-duration="1300">
-      <h1 class="why-us-heading py-4">Kenapa Harus Produk Kami ?</h1>
+        <h1 class="why-us-heading py-4">Kenapa Harus Produk Kami ?</h1>
       </div>
       <div class="row whyUs">
         <div class="col-lg-4 col-sm-6 mb-4">
-        <div data-aos="flip-left">
-          <div class="why-us-card">
-            <h4 class="icons">
-              <i class="bi bi-shield-check"></i>
-            </h4>
-            <div class="card-body">
-              <h4 class="why-us-cards-title card-title">
-                Bergaransi
+          <div data-aos="flip-left">
+            <div class="why-us-card">
+              <h4 class="icons">
+                <i class="bi bi-shield-check"></i>
               </h4>
-              <p class="why-us-cards-text card-text">Produk yang kami jual bergaransi dan kami akan mengganti produk
-                jika tidak ada kesesuaian dengan mengikuti ketentuan garansi Alchemist Baut</p>
+              <div class="card-body">
+                <h4 class="why-us-cards-title card-title">
+                  Bergaransi
+                </h4>
+                <p class="why-us-cards-text card-text">Produk yang kami jual bergaransi dan kami akan mengganti produk
+                  jika tidak ada kesesuaian dengan mengikuti ketentuan garansi Alchemist Baut</p>
+              </div>
             </div>
-          </div>
           </div>
         </div>
         <div class="col-lg-4 col-sm-6 mb-4">
-        <div data-aos="flip-left" data-aos-duration="1400">
-          <div class="why-us-card">
-            <h4 class="icons">
-              <i class="bi bi-cash-coin"></i>
-            </h4>
-            <div class="card-body">
-              <h4 class="why-us-cards-title card-title">
-                Harga Terjangkau
+          <div data-aos="flip-left" data-aos-duration="1400">
+            <div class="why-us-card">
+              <h4 class="icons">
+                <i class="bi bi-cash-coin"></i>
               </h4>
-              <p class="why-us-cards-text card-text">Produk yang kami jual bergaransi dan kami akan mengganti produk
-                jika tidak ada kesesuaian dengan mengikuti ketentuan garansi Alchemist Baut</p>
+              <div class="card-body">
+                <h4 class="why-us-cards-title card-title">
+                  Harga Terjangkau
+                </h4>
+                <p class="why-us-cards-text card-text">Produk yang kami jual bergaransi dan kami akan mengganti produk
+                  jika tidak ada kesesuaian dengan mengikuti ketentuan garansi Alchemist Baut</p>
+              </div>
             </div>
           </div>
-        </div>
         </div>
         <div class="col-lg-4 col-sm-6 mb-4">
-        <div data-aos="flip-left" data-aos-duration="1900">
-          <div class="why-us-card">
-            <h4 class="icons">
-              <i class="bi bi-person-check"></i>
-            </h4>
-            <div class="card-body">
-              <h4 class="why-us-cards-title card-title">
-                Mengutamakan Kepuasan Pelanggan
+          <div data-aos="flip-left" data-aos-duration="1900">
+            <div class="why-us-card">
+              <h4 class="icons">
+                <i class="bi bi-person-check"></i>
               </h4>
-              <p class="why-us-cards-text card-text">Produk yang kami jual bergaransi dan kami akan mengganti produk
-                jika tidak ada kesesuaian dengan mengikuti ketentuan garansi Alchemist Baut</p>
+              <div class="card-body">
+                <h4 class="why-us-cards-title card-title">
+                  Mengutamakan Kepuasan Pelanggan
+                </h4>
+                <p class="why-us-cards-text card-text">Produk yang kami jual bergaransi dan kami akan mengganti produk
+                  jika tidak ada kesesuaian dengan mengikuti ketentuan garansi Alchemist Baut</p>
+              </div>
             </div>
           </div>
         </div>
-</div>
       </div>
       <!-- /.container -->
   </section>
@@ -169,19 +170,19 @@ function format_rupiah($total)
     <section id="products" class="product-highlight-section">
       <!-- Page Content -->
       <div data-aos="zoom-in">
-      <h1 class="product-heading">Produk Terbaru</h1>
+        <h1 class="product-heading">Produk Terbaru</h1>
       </div>
       <div class="cards-container">
         <div class="row container-product">
           <?php foreach ($data as $barang) : ?>
             <div class="col-lg-3 col-md-4 col-sm-4 card-box">
               <div class="card product-card">
-                <a href="">
+                <a href="product.php">
                   <img src="./assets/function/img/<?= $barang['img']; ?>" class="product-card-img card-img-top mt-4 img-fluid" alt="...">
                 </a>
                 <div class="card-body">
                   <span class="product-promo position-absolute top-0 start-0 bg-danger text-white">Promo</span>
-                  <h5 class="product-titles"><?= $barang['nama_barang']; ?></h5>
+                  <h5 class="product-title fw-bold"><?= $barang['nama_barang']; ?></h5>
                   <div class="product-price card-text">
                     <p class="real-price"><?= format_rupiah($barang['harga_barang']) ?></p>
                     <p class="discount-price"><?= format_rupiah($barang['harga_promo']) ?></p>
@@ -193,14 +194,14 @@ function format_rupiah($total)
         </div>
 
       </div>
-    </div>
-    <!-- Footer -->
-    <div class="container-footer row">
-      <?php
-      include 'footer.php';
-      ?>
-    </div>
-    <!-- Akhir Footer -->
+  </div>
+  <!-- Footer -->
+  <div class="container-footer row">
+    <?php
+    include 'footer.php';
+    ?>
+  </div>
+  <!-- Akhir Footer -->
   </section>
   <!-- Akhir Product Highlight -->
 

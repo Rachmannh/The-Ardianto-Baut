@@ -5,7 +5,7 @@
 }
 
 html {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   scroll-behavior: smooth;
 }
 
@@ -20,8 +20,7 @@ body {
   --navbar-font: 'Hind Madurai', sans-serif;
   --heading-font: 'Hind Madurai', sans-serif;
   --sub-heading-font: 'Martel Sans', sans-serif;
-}
-
+} 
 
 /* Landing Page */
 
@@ -309,7 +308,7 @@ body {
 .product-highlight-section {
   position: relative;
   display: block;
-  margin-bottom: 10%;
+  padding-bottom: 10%;
   top: 80px;
   background-color: #f5f5f5 !important;
   width: 100%;
@@ -338,6 +337,7 @@ body {
 
 .card-box {
   position: relative;
+  width: fit-content;
   margin-bottom: 30px;
 }
 
@@ -350,7 +350,7 @@ body {
   position: relative;
   top: 60px;
   width: 260px;
-  height: 400px;
+  height: 100%;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
   border-radius: 10px;
 }
@@ -369,7 +369,7 @@ body {
 
 .product-title {
   position: relative;
-  margin: 40px 0 20px 0;
+  margin: 15px 0 0 0;
   font-size: 18px !important;
   font-family: var(--heading-font);
   font-weight: 400;
@@ -481,6 +481,18 @@ body {
 
 .developer:hover {
   color: #D80032;
+}
+
+@media (min-width:641px)  {
+  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  .footer {
+    position: relative;
+  }
+  .logo-pembayaran {
+    position: relative;
+    width: auto;
+    margin: auto;
+  }
 }
 
 /* Akhir Footer */
@@ -967,6 +979,7 @@ body {
 .card {
   border: none;
   border-radius: 10px;
+  height: 100%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
@@ -975,29 +988,36 @@ body {
   transition: 0.6s;
 }
 
-.c-details span {
-  font-weight: 300;
-  font-size: 13px
+.c-details {
+  display: inline-flex;
+  align-items: center;
 }
 
 .icon {
   width: 50px;
   height: 50px;
+  padding: 20px;
   background-color: #d8003252;
   border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 39px
 }
 
 .text1 {
   font-size: 14px;
-  font-weight: 600
+  font-weight: 600;
 }
 
 .text2 {
-  color: #a5aec0
+  color: #a5aec0;
+}
+
+.card-heading{
+  margin-left: 5%;
+  font-family: var(--heading-font);
+  font-size: 2em;
+  font-weight: 500;
 }
 
 .heading {
@@ -1008,8 +1028,8 @@ body {
 
 .sub-heading {
   position: relative;
+  text-align: center;
   top: -5px;
-  left: 30px;
   font-family: var(--sub-heading-font);
   font-size: 20px;
   font-weight: 600;

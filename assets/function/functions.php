@@ -5,7 +5,6 @@ $conn = mysqli_connect("localhost", "root", "", "alchemist_baut");
 
 $web = 'The Ardianto Baut';
 
-
 function barang($data)
 {
 	global $conn;
